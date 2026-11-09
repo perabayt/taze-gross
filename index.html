@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taze Gross — Şehrin En Taze Marketi</title>
+  <meta name="description" content="Taze Gross: taze, light, vejetaryen, vegan, alerjen dostu, gurme ve sporcu ürünlerinde yedi uzman reyon. Bir Pera Yönetim kuruluşudur." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    // Tema tercihi: kayıtlı yoksa varsayılan açık tema (stil yüklenmeden önce, titremesin diye)
+    document.documentElement.dataset.theme = localStorage.getItem("tg-theme") || "light";
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='24' fill='%23ff4b4b'/%3E%3Cpath d='M32 6l4 7 8-2-4 7 7 4-8 3 1 8-8-5-8 5 1-8-8-3 7-4-4-7 8 2z' fill='%2358cc02'/%3E%3C/svg%3E" />
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/_ortak/serit.js" defer></script>
+  </head>
+<body>
+
+<!-- ═══════════ SVG SPRITE — özgün flat sebze/meyve seti ═══════════ -->
+<svg width="0" height="0" class="sprite" aria-hidden="true">
+  <defs>
+
+    <symbol id="i-tomato" viewBox="0 0 64 64">
+      <defs>
+        <radialGradient id="tg-tom" cx="0.35" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#ff8f6e"/>
+          <stop offset="0.45" stop-color="#f2452d"/>
+          <stop offset="1" stop-color="#b01d1d"/>
+        </radialGradient>
+        <linearGradient id="tg-toml" x1="0" y1="0" x2="0.3" y2="1">
+          <stop offset="0" stop-color="#8bc34a"/>
+          <stop offset="1" stop-color="#33691e"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="32" cy="37" rx="24" ry="22" fill="url(#tg-tom)"/>
+      <path d="M12 43c3 9 11 15 20 15s17-6 20-15c-5 7-12 10-20 10s-15-3-20-10z" fill="#7d1010" opacity=".5"/>
+      <path d="M32 15c-2 3-2 6 0 9m-9-8c-1 3 0 6 2 8m16-9c2 3 2 6 0 8" stroke="#8e1a1a" stroke-width="2" stroke-linecap="round" opacity=".3" fill="none"/>
+      <path d="M19.5 24c1.5-4 4.5-7 8-8.5" stroke="#ffd0bf" stroke-width="3.2" stroke-linecap="round" opacity=".55" fill="none"/>
+      <path d="M32 8l3 5.5 6.5-2-3 5.5 6 3-6.6 2.3.8 6.2-6.7-4-6.7 4 .8-6.2L19.5 20l6-3-3-5.5 6.5 2z" fill="url(#tg-toml)"/>
+      <path d="M30.6 5h2.8l.8 6.5h-4.4z" fill="#558b2f"/>
+    </symbol>
+
+    <symbol id="i-carrot" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tg-car" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffb066"/>
+          <stop offset="0.5" stop-color="#f57c00"/>
+          <stop offset="1" stop-color="#d34e00"/>
+        </linearGradient>
+        <linearGradient id="tg-carl" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#66bb6a"/>
+          <stop offset="1" stop-color="#2e7d32"/>
+        </linearGradient>
+      </defs>
+      <path d="M45 19c4 4 5 9 2 13L25 59c-4 4-11 3-13-2-1-3 0-6 2-8l27-27c1.4-1.6 3-3 4-3z" fill="url(#tg-car)"/>
+      <path d="M43 23 17 49" stroke="#ffd9ac" stroke-width="3" stroke-linecap="round" opacity=".5" fill="none"/>
+      <path d="M36 27l5.5 5.5M28.5 34.5l5.5 5.5M21 42l5.5 5.5" stroke="#b84400" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>
+      <path d="M47 17c-2-6 2-12 8-13-1 5 3 7 7 6-2 6-9 9-12 7z" fill="url(#tg-carl)"/>
+      <path d="M45 15c-6-1-9-7-8-13 3 3 6.5 3.5 9 2.5 1 5 1 8.5-1 10.5z" fill="#66bb6a"/>
+      <path d="M50 9c-2.5 2-3.5 5-3 8" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" opacity=".7" fill="none"/>
+    </symbol>
+
+    <symbol id="i-avocado" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tg-avs" x1="0" y1="0" x2="0.4" y2="1">
+          <stop offset="0" stop-color="#557f38"/>
+          <stop offset="1" stop-color="#28421b"/>
+        </linearGradient>
+        <radialGradient id="tg-avf" cx="0.5" cy="0.42" r="0.8">
+          <stop offset="0" stop-color="#f6ffd6"/>
+          <stop offset="0.68" stop-color="#d6ec9f"/>
+          <stop offset="1" stop-color="#a8c968"/>
+        </radialGradient>
+        <radialGradient id="tg-avp" cx="0.38" cy="0.32" r="0.9">
+          <stop offset="0" stop-color="#cd9059"/>
+          <stop offset="1" stop-color="#744523"/>
+        </radialGradient>
+      </defs>
+      <path d="M32 5c5 0 7 6 8 12 1 8 13 12 13 25 0 11-9 18-21 18S11 53 11 42c0-13 12-17 13-25 1-6 3-12 8-12z" fill="url(#tg-avs)"/>
+      <path d="M32 12c4 0 5 5 6 10 1 7 10 10 10 20 0 9-7 14-16 14s-16-5-16-14c0-10 9-13 10-20 1-5 2-10 6-10z" fill="url(#tg-avf)"/>
+      <circle cx="32" cy="43" r="9" fill="url(#tg-avp)"/>
+      <ellipse cx="28.8" cy="39.6" rx="3" ry="2.2" fill="#e8b98a" opacity=".85"/>
+      <path d="M16.5 42c0-9 8-13 10-20" stroke="#7da35a" stroke-width="2.4" stroke-linecap="round" opacity=".5" fill="none"/>
+    </symbol>
+
+    <symbol id="i-broccoli" viewBox="0 0 64 64">
+      <defs>
+        <radialGradient id="tg-brf" cx="0.4" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#7cc576"/>
+          <stop offset="0.55" stop-color="#43a047"/>
+          <stop offset="1" stop-color="#1b5e20"/>
+        </radialGradient>
+        <linearGradient id="tg-brs" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#cde6a5"/>
+          <stop offset="1" stop-color="#8bc34a"/>
+        </linearGradient>
+      </defs>
+      <path d="M27 34h10l3 17c1 4-2 7-8 7s-9-3-8-7z" fill="url(#tg-brs)"/>
+      <path d="M31 36l-2 14M35 36l1 12" stroke="#7cb342" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="19" cy="25" r="11" fill="url(#tg-brf)"/>
+      <circle cx="43" cy="23" r="12" fill="url(#tg-brf)"/>
+      <circle cx="31" cy="15" r="10" fill="url(#tg-brf)"/>
+      <circle cx="31" cy="28" r="11" fill="url(#tg-brf)"/>
+      <g fill="#0d3f12" opacity=".38">
+        <circle cx="16" cy="22" r="1.4"/><circle cx="21" cy="28" r="1.2"/><circle cx="27" cy="13" r="1.3"/>
+        <circle cx="34" cy="18" r="1.2"/><circle cx="41" cy="20" r="1.4"/><circle cx="46" cy="26" r="1.2"/>
+        <circle cx="30" cy="26" r="1.3"/><circle cx="36" cy="30" r="1.2"/><circle cx="24" cy="31" r="1.1"/>
+      </g>
+      <g fill="#b7e4b0" opacity=".9">
+        <circle cx="24" cy="20" r="1.2"/><circle cx="38" cy="13" r="1.2"/><circle cx="45" cy="18" r="1"/>
+        <circle cx="27" cy="30" r="1"/><circle cx="15" cy="27" r="1"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-strawberry" viewBox="0 0 64 64">
+      <defs>
+        <radialGradient id="tg-str" cx="0.35" cy="0.3" r="1">
+          <stop offset="0" stop-color="#ff7961"/>
+          <stop offset="0.5" stop-color="#e53935"/>
+          <stop offset="1" stop-color="#961313"/>
+        </radialGradient>
+        <linearGradient id="tg-stl" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#81c784"/>
+          <stop offset="1" stop-color="#2e7d32"/>
+        </linearGradient>
+      </defs>
+      <path d="M32 15c10-3 20 3 20 13 0 14-12 25-20 29-8-4-20-15-20-29 0-10 10-16 20-13z" fill="url(#tg-str)"/>
+      <path d="M20 27c1-5 4.5-8 8.5-9.5" stroke="#ffb3a0" stroke-width="3" stroke-linecap="round" opacity=".55" fill="none"/>
+      <g fill="#ffe082" stroke="#c49000" stroke-width="0.5">
+        <ellipse cx="24" cy="31" rx="1.5" ry="2.2"/><ellipse cx="40" cy="31" rx="1.5" ry="2.2"/>
+        <ellipse cx="32" cy="37" rx="1.5" ry="2.2"/><ellipse cx="23" cy="42" rx="1.4" ry="2"/>
+        <ellipse cx="41" cy="42" rx="1.4" ry="2"/><ellipse cx="32" cy="48" rx="1.3" ry="1.9"/>
+        <ellipse cx="27" cy="52" rx="1.1" ry="1.6"/><ellipse cx="37" cy="52" rx="1.1" ry="1.6"/>
+      </g>
+      <path d="M32 6l3 4.6 5.5-1.4-2.2 4.8 5 2.4-5.6 2 .6 5.4-6.3-3.2-6.3 3.2.6-5.4-5.6-2 5-2.4-2.2-4.8 5.5 1.4z" fill="url(#tg-stl)"/>
+      <path d="M31 3h2l.6 5h-3.2z" fill="#558b2f"/>
+    </symbol>
+
+    <symbol id="i-milk" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tg-mlk" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset="0.7" stop-color="#eef4f8"/>
+          <stop offset="0.72" stop-color="#cfdde6"/>
+          <stop offset="1" stop-color="#bccdd8"/>
+        </linearGradient>
+        <linearGradient id="tg-mlkb" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#45bef8"/>
+          <stop offset="1" stop-color="#0e8ed4"/>
+        </linearGradient>
+      </defs>
+      <rect x="29" y="2" width="6" height="6" rx="1.5" fill="#9fb6c2"/>
+      <path d="M22 6h20l6 12v36a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V18z" fill="url(#tg-mlk)"/>
+      <path d="M22 6h20l6 12H16z" fill="url(#tg-mlkb)"/>
+      <path d="M42 6l6 12h-9l-4-12z" fill="#0b76b4" opacity=".45"/>
+      <path d="M16 33h32v12H16z" fill="url(#tg-mlkb)"/>
+      <path d="M32 34.5c2 3 4 4.6 4 7.1a4 4 0 0 1-8 0c0-2.5 2-4.1 4-7.1z" fill="#fff"/>
+      <path d="M19 22v28" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".65"/>
+    </symbol>
+
+    <symbol id="i-cheese" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tg-chs" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffe27a"/>
+          <stop offset="1" stop-color="#f5a623"/>
+        </linearGradient>
+      </defs>
+      <path d="M6 40 54 18c4-2 6 1 6 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4z" fill="url(#tg-chs)"/>
+      <path d="M7.5 39 54 18c2.6-1.2 4.4-.6 5.3 1L10.5 40.5z" fill="#fff3b0" opacity=".9"/>
+      <path d="M6 42h54v2a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4z" fill="#dd8d00"/>
+      <g>
+        <circle cx="24" cy="36" r="4.2" fill="#dd9200"/>
+        <path d="M21 34.2a4.2 4.2 0 0 1 6.4 3.4" fill="none" stroke="#b96f00" stroke-width="1.6" opacity=".8"/>
+        <circle cx="40" cy="30" r="3.1" fill="#dd9200"/>
+        <path d="M37.8 28.6a3.1 3.1 0 0 1 4.8 2.6" fill="none" stroke="#b96f00" stroke-width="1.4" opacity=".8"/>
+        <circle cx="48" cy="38" r="2.6" fill="#dd9200"/>
+        <path d="M46.2 36.8a2.6 2.6 0 0 1 4 2.2" fill="none" stroke="#b96f00" stroke-width="1.2" opacity=".8"/>
+        <circle cx="15" cy="42" r="2" fill="#dd9200"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-dumbbell" viewBox="0 0 64 64">
+      <rect x="26" y="29" width="12" height="6" rx="3" fill="#8ba0aa"/>
+      <rect x="12" y="18" width="10" height="28" rx="4" fill="#1cb0f6"/>
+      <rect x="42" y="18" width="10" height="28" rx="4" fill="#1cb0f6"/>
+      <rect x="4" y="24" width="8" height="16" rx="3.5" fill="#1899d6"/>
+      <rect x="52" y="24" width="8" height="16" rx="3.5" fill="#1899d6"/>
+    </symbol>
+
+    <symbol id="i-shield" viewBox="0 0 64 64">
+      <path d="M32 4l24 8v16c0 15-10 26-24 32C18 54 8 43 8 28V12z" fill="#1cb0f6"/>
+      <path d="M32 4l24 8v16c0 15-10 26-24 32z" fill="#1899d6"/>
+      <path d="M21 32l8 8 14-16" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+
+    <symbol id="i-flame" viewBox="0 0 64 64">
+      <path d="M32 4c2 12 14 16 14 30 0 10-6 18-14 18S18 44 18 34c0-6 3-10 6-14 0 5 2 8 5 9-1-9 0-19 3-25z" fill="#ff9600"/>
+      <path d="M32 24c4 5 7 8 7 14 0 6-3 10-7 10s-7-4-7-10c0-4 2-6 4-9 0 3 1 4 3 5z" fill="#ffc800"/>
+    </symbol>
+
+    <symbol id="i-bolt" viewBox="0 0 64 64">
+      <path d="M36 4 14 36h14l-4 24 26-34H34z" fill="#ffc800"/>
+      <path d="M36 4 14 36h7z" fill="#e6a800" opacity=".6"/>
+    </symbol>
+
+    <symbol id="i-medal" viewBox="0 0 64 64">
+      <path d="M20 4h10l-8 20H10z" fill="#ff4b4b"/>
+      <path d="M44 4H34l8 20h12z" fill="#ff4b4b"/>
+      <circle cx="32" cy="40" r="18" fill="#ffc800"/>
+      <circle cx="32" cy="40" r="12" fill="#e6a800"/>
+      <path d="M32 31l3 6 6 .8-4.4 4.3 1 6.4L32 45.4l-5.6 3.1 1-6.4L23 37.8l6-.8z" fill="#ffdf6b"/>
+    </symbol>
+
+    <symbol id="i-gem" viewBox="0 0 64 64">
+      <path d="M18 8h28l10 14-24 34L8 22z" fill="#1cb0f6"/>
+      <path d="M32 56 8 22h16z" fill="#49c0f8"/>
+      <path d="M46 8 32 22h24z" fill="#49c0f8"/>
+      <path d="M32 56l8-34h16z" fill="#1899d6"/>
+    </symbol>
+
+    <symbol id="i-people" viewBox="0 0 64 64">
+      <circle cx="22" cy="22" r="10" fill="#ce82ff"/>
+      <path d="M6 52c0-10 7-16 16-16s16 6 16 16z" fill="#ce82ff"/>
+      <circle cx="45" cy="24" r="8" fill="#a568cc"/>
+      <path d="M34 52c1-9 6-14 13-14 7 0 12 5 13 14z" fill="#a568cc"/>
+    </symbol>
+
+    <symbol id="i-basket" viewBox="0 0 64 64">
+      <path d="M20 26 30 8m14 18L34 8" stroke="#b46b3c" stroke-width="5" stroke-linecap="round"/>
+      <path d="M8 26h48l-5 26a6 6 0 0 1-6 5H19a6 6 0 0 1-6-5z" fill="#ff9600"/>
+      <path d="M8 26h48l-1.4 7H9.4z" fill="#e07d00"/>
+      <path d="M24 38v11m8-11v11m8-11v11" stroke="#c96f00" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-calendar" viewBox="0 0 64 64">
+      <rect x="8" y="12" width="48" height="46" rx="6" fill="#f1f7fb"/>
+      <path d="M8 18a6 6 0 0 1 6-6h36a6 6 0 0 1 6 6v10H8z" fill="#ff4b4b"/>
+      <rect x="18" y="6" width="6" height="12" rx="3" fill="#c9d6dd"/>
+      <rect x="40" y="6" width="6" height="12" rx="3" fill="#c9d6dd"/>
+      <path d="M20 40l8 8 16-14" stroke="#58cc02" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+
+    <symbol id="i-pin" viewBox="0 0 64 64">
+      <path d="M32 4c12 0 21 9 21 21 0 15-15 28-21 35-6-7-21-20-21-35C11 13 20 4 32 4z" fill="#58cc02"/>
+      <circle cx="32" cy="25" r="9" fill="#f1f7fb"/>
+    </symbol>
+
+    <symbol id="i-leaf" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="tg-lf" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8bc34a"/>
+          <stop offset="1" stop-color="#2e7d32"/>
+        </linearGradient>
+      </defs>
+      <path d="M54 8C30 8 12 22 12 44c0 4 1 8 2 10 2-16 12-28 28-34-14 8-22 20-24 36 3 1 7 2 10 2 22 0 30-24 26-50z" fill="url(#tg-lf)"/>
+      <path d="M15.5 52c2.8-14 11.5-24.5 24.5-30.5" stroke="#dcedc8" stroke-width="2" stroke-linecap="round" opacity=".65" fill="none"/>
+      <path d="M24 42c4-1 8-.8 11 1.2M30.5 33.5c4-2 8-2 11-.8" stroke="#dcedc8" stroke-width="1.6" stroke-linecap="round" opacity=".45" fill="none"/>
+    </symbol>
+
+    <symbol id="i-pepper" viewBox="0 0 64 64">
+      <defs>
+        <radialGradient id="tg-pep" cx="0.35" cy="0.3" r="1">
+          <stop offset="0" stop-color="#9ccc65"/>
+          <stop offset="0.55" stop-color="#43a047"/>
+          <stop offset="1" stop-color="#1b5e20"/>
+        </radialGradient>
+      </defs>
+      <path d="M24 18c-8 4-14 12-14 22 0 12 9 20 20 20 14 0 24-12 24-28 0-6-2-10-4-13-2 6-6 9-10 10 2-4 2-8 0-11-3 5-8 6-16 0z" fill="url(#tg-pep)"/>
+      <path d="M14 40c0 12 9 20 20 20-8-4-14-12-14-22 0-6 2-12 4-16-6 4-10 10-10 18z" fill="#14481a" opacity=".5"/>
+      <path d="M22 29c-3.6 3.8-5.4 8.6-4.6 14" stroke="#c5e1a5" stroke-width="3" stroke-linecap="round" opacity=".6" fill="none"/>
+      <path d="M36 6c-2 4-2 8 0 12" stroke="#33691e" stroke-width="5" stroke-linecap="round" fill="none"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="hdr__logo" href="#top">taze gross</a>
+    <nav class="hdr__nav" id="hdrNav">
+      <a href="#reyonlar">Reyonlar</a>
+      <a href="#neden">Neden Taze Gross</a>
+      <a href="#etkinlik">Etkinlikler</a>
+      <a href="#ziyaret">Ziyaret</a>
+    </nav>
+    <div class="hdr__right">
+      <button type="button" class="tswitch" id="themeSwitch" aria-label="Tema değiştir">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.4"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+        </svg>
+      </button>
+      <a href="#ziyaret" class="dbtn dbtn--green dbtn--sm">Ziyaret Planla</a>
+      <button type="button" class="hdr__burger" id="burger" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="hdr__mobile" id="hdrMobile">
+    <a href="#reyonlar">Reyonlar</a>
+    <a href="#neden">Neden Taze Gross</a>
+    <a href="#etkinlik">Etkinlikler</a>
+    <a href="#ziyaret">Ziyaret</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__art" id="heroArt" aria-hidden="true">
+        <span class="blob"></span>
+        <svg class="veg veg--tomato" data-depth="18"><use href="#i-tomato"/></svg>
+        <svg class="veg veg--avocado" data-depth="30"><use href="#i-avocado"/></svg>
+        <svg class="veg veg--broccoli" data-depth="14"><use href="#i-broccoli"/></svg>
+        <svg class="veg veg--strawberry" data-depth="26"><use href="#i-strawberry"/></svg>
+        <svg class="veg veg--carrot" data-depth="22"><use href="#i-carrot"/></svg>
+        <svg class="veg veg--cheese" data-depth="12"><use href="#i-cheese"/></svg>
+      </div>
+      <div class="hero__txt">
+        <h1>Şehrin en taze, en <em>eğlenceli</em> marketi!</h1>
+        <p>Taze, light, vejetaryen, vegan, alerjen dostu, gurme ve sporcu ürünlerinde
+        <strong>7 uzman reyon</strong> — hepsi tek çatı altında, her gün 08:00–22:00.</p>
+        <div class="hero__cta">
+          <a href="#reyonlar" class="dbtn dbtn--green dbtn--lg">Reyonları Keşfet</a>
+          <a href="#neden" class="dbtn dbtn--ghost dbtn--lg">Neden Taze Gross?</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__strip">
+      <div class="wrap strip" id="strip">
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-tomato"/></svg>Taze Ürünler</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-avocado"/></svg>Light &amp; Form</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-broccoli"/></svg>Vejetaryen</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-leaf"/></svg>Vegan</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-milk"/></svg>Alerjen Dostu</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-cheese"/></svg>Gurme Seçki</a>
+        <a href="#reyonlar" class="strip__chip"><svg><use href="#i-dumbbell"/></svg>Sporcu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SAYILAR ═══════════ -->
+  <section class="nums">
+    <div class="wrap nums__grid">
+      <div class="num reveal"><svg><use href="#i-flame"/></svg><b><span data-count="365">0</span></b><small>gün kesintisiz tazelik</small></div>
+      <div class="num reveal"><svg><use href="#i-bolt"/></svg><b><span data-count="5000">0</span>+</b><small>aktif ürün çeşidi</small></div>
+      <div class="num reveal"><svg><use href="#i-medal"/></svg><b><span data-count="7">0</span></b><small>uzman reyon</small></div>
+      <div class="num reveal"><svg><use href="#i-people"/></svg><b><span data-count="40">0</span>+</b><small>yerel üretici ortağı</small></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ NEDEN — ALTERNATİF ÖZELLİK BLOKLARI ═══════════ -->
+  <section class="feats" id="neden">
+    <div class="wrap">
+      <h2 class="sec-title reveal">neden taze gross?</h2>
+    </div>
+
+    <div class="wrap feat reveal">
+      <div class="feat__art" data-hue="green" aria-hidden="true">
+        <svg class="feat__main"><use href="#i-tomato"/></svg>
+        <svg class="feat__side feat__side--a"><use href="#i-pepper"/></svg>
+        <svg class="feat__side feat__side--b"><use href="#i-carrot"/></svg>
+      </div>
+      <div class="feat__txt">
+        <h3 class="c-green">her sabah, sıfır bekleme tazelik</h3>
+        <p>Taze reyonumuz her gün <strong>05:00'te</strong> yeniden kurulur. Gün sonunda raf
+        sıfırlanır; ertesi güne tek bir ürün bile devretmez. Kalanlar gıda bankalarıyla paylaşılır.</p>
+        <div class="feat__meter">
+          <span>Bugünkü raf tazeliği</span>
+          <span class="meter"><i class="v98"></i></span>
+          <b class="c-yellow">%98</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap feat feat--flip reveal">
+      <div class="feat__art" data-hue="purple" aria-hidden="true">
+        <svg class="feat__main"><use href="#i-avocado"/></svg>
+        <svg class="feat__side feat__side--a"><use href="#i-cheese"/></svg>
+        <svg class="feat__side feat__side--b"><use href="#i-leaf"/></svg>
+      </div>
+      <div class="feat__txt">
+        <h3 class="c-purple">vegan'dan gurmeye, herkese bir reyon</h3>
+        <p>Sertifikalı <strong>%100 bitkisel</strong> raflardan olgunlaştırılmış peynir ve trüf
+        vitrinine — her yaşam tarzının kendi uzman reyonu, kendi danışmanı var.</p>
+        <ul class="ticks">
+          <li>Vegan şarküteri &amp; bitkisel süt köşesi</li>
+          <li>Cumartesi gurme tadım programı</li>
+          <li>Haftalık vejetaryen menü önerileri</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap feat reveal">
+      <div class="feat__art" data-hue="blue" aria-hidden="true">
+        <svg class="feat__main"><use href="#i-shield"/></svg>
+        <svg class="feat__side feat__side--a"><use href="#i-milk"/></svg>
+        <svg class="feat__side feat__side--b"><use href="#i-strawberry"/></svg>
+      </div>
+      <div class="feat__txt">
+        <h3 class="c-blue">alerjen güvenliği, söz değil prosedür</h3>
+        <p>Glutensiz, laktozsuz ve fıstıksız ürünler <strong>ayrı depolanır, ayrı taşınır,
+        ayrı raflarda</strong> sunulur. Her etikette köken, içerik ve alerjen bilgisi eksiksizdir.</p>
+        <ul class="ticks">
+          <li>Çapraz bulaşmaya kapalı raf düzeni</li>
+          <li>Okunamayan etiket, satılmayan üründür</li>
+          <li>Danışman diyetisyen hafta içi mağazada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap feat feat--flip reveal">
+      <div class="feat__art" data-hue="red" aria-hidden="true">
+        <svg class="feat__main"><use href="#i-dumbbell"/></svg>
+        <svg class="feat__side feat__side--a"><use href="#i-bolt"/></svg>
+        <svg class="feat__side feat__side--b"><use href="#i-broccoli"/></svg>
+      </div>
+      <div class="feat__txt">
+        <h3 class="c-red">sporcular için güç istasyonu</h3>
+        <p>Protein, granola, enerji barları ve fonksiyonel içecekler — raflar
+        <strong>antrenman hedefine göre</strong> düzenlendi: kuvvet, dayanıklılık, toparlanma.</p>
+        <ul class="ticks">
+          <li>Hedefe göre raf sistemi</li>
+          <li>Diyetisyen onaylı içerik kartları</li>
+          <li>Haftalık yeni ürün seçkisi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ REYONLAR ═══════════ -->
+  <section class="aisles" id="reyonlar">
+    <div class="wrap">
+      <h2 class="sec-title reveal">yedi uzman reyon</h2>
+      <p class="sec-sub reveal">Her reyon kendi uzmanı tarafından yönetilir; seçki her hafta yeniden değerlendirilir.</p>
+      <div class="aisles__grid">
+        <article class="acard reveal" data-tile="green">
+          <span class="acard__tile"><svg><use href="#i-tomato"/></svg></span>
+          <h3>Taze Ürünler</h3>
+          <p>Her sabah 05:00 tedariki, yerel üreticiden mevsim takvimiyle.</p>
+        </article>
+        <article class="acard reveal" data-tile="yellow">
+          <span class="acard__tile"><svg><use href="#i-avocado"/></svg></span>
+          <h3>Light &amp; Form</h3>
+          <p>Düşük kalorili, şekersiz, diyetisyen onaylı tam etiketli seçki.</p>
+        </article>
+        <article class="acard reveal" data-tile="orange">
+          <span class="acard__tile"><svg><use href="#i-broccoli"/></svg></span>
+          <h3>Vejetaryen</h3>
+          <p>Protein dengesi kurulmuş, etsiz ama eksiksiz bir mutfak.</p>
+        </article>
+        <article class="acard reveal" data-tile="green">
+          <span class="acard__tile"><svg><use href="#i-leaf"/></svg></span>
+          <h3>Vegan</h3>
+          <p>Sertifikalı %100 bitkisel raflar; ayrı reyon, ayrı özen.</p>
+        </article>
+        <article class="acard reveal" data-tile="blue">
+          <span class="acard__tile"><svg><use href="#i-milk"/></svg></span>
+          <h3>Alerjen Dostu</h3>
+          <p>Glutensiz, laktozsuz, fıstıksız; çapraz bulaşma riski sıfır.</p>
+        </article>
+        <article class="acard reveal" data-tile="purple">
+          <span class="acard__tile"><svg><use href="#i-cheese"/></svg></span>
+          <h3>Gurme Seçki</h3>
+          <p>Olgun peynirler, trüf, artizan çikolata, butik zeytinyağları.</p>
+        </article>
+        <article class="acard reveal" data-tile="red">
+          <span class="acard__tile"><svg><use href="#i-dumbbell"/></svg></span>
+          <h3>Sporcu Beslenmesi</h3>
+          <p>Protein ve fonksiyonel ürünler, hedefe göre düzenli raflar.</p>
+        </article>
+        <a href="#ziyaret" class="acard acard--cta reveal">
+          <span class="acard__tile"><svg><use href="#i-basket"/></svg></span>
+          <h3>Hepsini yerinde gör!</h3>
+          <p>Ziyaret planla →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ETKİNLİKLER ═══════════ -->
+  <section class="events" id="etkinlik">
+    <div class="wrap">
+      <h2 class="sec-title reveal">bu hafta mağazada</h2>
+      <div class="events__grid">
+        <article class="ecard reveal" data-tile="yellow">
+          <svg class="ecard__icon"><use href="#i-cheese"/></svg>
+          <span class="ecard__tag">Cumartesi 14:00 – 18:00</span>
+          <h3>Peynir Tadım Günü</h3>
+          <p>Gurme reyonunda olgunlaştırılmış peynir tadımı; şarküteri ustamız eşliğinde.</p>
+        </article>
+        <article class="ecard reveal" data-tile="green">
+          <svg class="ecard__icon"><use href="#i-avocado"/></svg>
+          <span class="ecard__tag">Yeni köşe</span>
+          <h3>Vegan Şarküteri Açıldı</h3>
+          <p>Bitkisel peynir ve sucuk çeşitleri artık vegan reyonunda, ayrı tezgâhta.</p>
+        </article>
+        <article class="ecard reveal" data-tile="blue">
+          <svg class="ecard__icon"><use href="#i-milk"/></svg>
+          <span class="ecard__tag">Çarşamba 17:00</span>
+          <h3>"Etiket Nasıl Okunur?"</h3>
+          <p>Danışman diyetisyenimizle ücretsiz mini atölye; alerjen etiketleri masada.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ZİYARET ═══════════ -->
+  <section class="visit" id="ziyaret">
+    <div class="wrap visit__grid">
+      <div class="visit__txt reveal">
+        <h2 class="sec-title">online satış yok.<br/><span class="c-green">bilinçli tercih!</span></h2>
+        <p>Kokusunu almadığınız meyveyi, dokusuna bakmadığınız peyniri size göndermeyiz.
+        Taze Gross bir teslimat kutusu değil; gelip gezeceğiniz, tadacağınız ve
+        danışacağınız bir mağazadır.</p>
+        <ul class="ticks">
+          <li><strong>Tadım Programı</strong> — Cumartesi 14:00–18:00</li>
+          <li><strong>Danışman Diyetisyen</strong> — Hafta içi, randevulu</li>
+          <li><strong>Otopark</strong> — 2 saat ücretsiz vale</li>
+        </ul>
+        <a href="#" class="dbtn dbtn--green dbtn--lg">Yol Tarifi Al</a>
+      </div>
+      <aside class="visit__panel reveal">
+        <div class="visit__clock"><b id="liveClock">--:--</b><span id="liveDay">—</span></div>
+        <p class="visit__status" id="visitStatus"><i></i><span>Mağazamız şu an açık!</span></p>
+        <div class="visit__hours" id="hoursList">
+          <div><span>Pazartesi</span><span>08:00 – 22:00</span></div>
+          <div><span>Salı</span><span>08:00 – 22:00</span></div>
+          <div><span>Çarşamba</span><span>08:00 – 22:00</span></div>
+          <div><span>Perşembe</span><span>08:00 – 22:00</span></div>
+          <div><span>Cuma</span><span>08:00 – 22:00</span></div>
+          <div><span>Cumartesi</span><span>08:00 – 22:00</span></div>
+          <div><span>Pazar</span><span>08:00 – 22:00</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA BANT ═══════════ -->
+  <section class="cta">
+    <div class="wrap cta__in reveal">
+      <div class="cta__veggies" aria-hidden="true">
+        <svg><use href="#i-strawberry"/></svg>
+        <svg><use href="#i-broccoli"/></svg>
+        <svg><use href="#i-tomato"/></svg>
+      </div>
+      <h2>Bugün uğra, tazeliği yerinde yaşa!</h2>
+      <p>Her gün 08:00 – 22:00 arası açığız. Tadım tezgâhı seni bekliyor.</p>
+      <a href="#ziyaret" class="dbtn dbtn--white dbtn--lg">Ziyaret Planla</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="ftr">
+  <div class="wrap ftr__grid">
+    <div class="ftr__brand">
+      <p class="ftr__logo">taze gross</p>
+      <p class="ftr__desc">Taze, light, vejetaryen, vegan, alerjen dostu, gurme ve sporcu
+      ürünlerinde şehrin en özenli seçkisi.</p>
+    </div>
+    <nav class="ftr__col" aria-label="Mağaza">
+      <h4>Mağaza</h4>
+      <a href="#reyonlar">Reyonlar</a>
+      <a href="#etkinlik">Etkinlikler</a>
+      <a href="#ziyaret">Ziyaret &amp; Saatler</a>
+    </nav>
+    <nav class="ftr__col" aria-label="Kurumsal">
+      <h4>Kurumsal</h4>
+      <a href="#neden">Neden Taze Gross</a>
+      <a href="#">KVKK</a>
+      <a href="#">Çerez Politikası</a>
+    </nav>
+    <div class="ftr__col">
+      <h4>İletişim</h4>
+      <a href="mailto:info@ornek.com">info@ornek.com</a>
+      <a href="tel:+902120000000">+90 212 000 00 00</a>
+      <span>Her gün 08:00 – 22:00</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="ftr__pera">
+      <span class="ftr__pera-mark">P</span>
+      <p><strong>Taze Gross</strong>, kurumsal danışmanlık şirketi <strong>Pera Yönetim</strong>'in
+      perakende kuruluşudur; aynı yönetim disiplini ve kalite standartlarıyla denetlenir.</p>
+    </div>
+    <p class="ftr__bottom">© <b id="year">2026</b> Taze Gross — Bir <strong>Pera Yönetim</strong> kuruluşudur.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
